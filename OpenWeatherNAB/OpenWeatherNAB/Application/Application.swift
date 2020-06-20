@@ -13,7 +13,9 @@ final class Application {
 
     func configureMainInterface(in window: UIWindow) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        window.rootViewController = storyboard.instantiateViewController(identifier: "ViewController")
+        let listViewController = storyboard.instantiateViewController(identifier: "WeatherListViewController")
+        let navigation = UINavigationController(rootViewController: listViewController)
+        window.rootViewController = navigation
         window.makeKeyAndVisible()
     }
 }
