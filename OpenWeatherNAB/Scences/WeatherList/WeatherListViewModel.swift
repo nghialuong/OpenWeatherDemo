@@ -8,6 +8,7 @@
 
 import Foundation
 import RxCocoa
+import RxSwift
 
 final class WeatherListViewModel: ViewModelType {
     
@@ -19,11 +20,18 @@ final class WeatherListViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        _ = input.trigger
-            .do(onNext: { [unowned self] _ in
-                self.weatherUseCase.getUpcommingWeekWeather(for: "saigon")
-            })
-        return  Output()
+        let weatherInfo = input.trigger
+            .flatMapLatest {
+                return self.weatherUseCase.getUpcommingWeekWeather(for: "saigon")
+                    .asDriverOnErrorJustComplete()
+                    .map {
+                        $0.map {
+                            WeatherItem(weatherDailyResult: $0)
+                        }
+                }
+        }
+        
+        return  Output(weatherInfo: weatherInfo)
     }
     
 }
@@ -34,5 +42,6 @@ extension WeatherListViewModel {
     }
     
     struct Output {
+        let weatherInfo: Driver<[WeatherItem]>
     }
 }

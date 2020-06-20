@@ -11,10 +11,11 @@ import RxCocoa
 import RxSwift
 
 class WeatherListViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
-
+    let disposeBag = DisposeBag()
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: WeatherListViewModel! = nil
+    var viewModel: WeatherListViewModel!
     
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -31,6 +32,7 @@ class WeatherListViewController: UIViewController, UISearchResultsUpdating, UISe
         self.title = "Weather Forecast"
         configureTableView()
         configureSearchController()
+        bindViewModel()
     }
     
     private func configureTableView() {
@@ -47,8 +49,12 @@ class WeatherListViewController: UIViewController, UISearchResultsUpdating, UISe
             .mapToVoid()
             .asDriverOnErrorJustComplete()
         let input = WeatherListViewModel.Input(trigger: viewWillAppear)
-        _ = viewModel.transform(input: input)
-        
+        let output = viewModel.transform(input: input)
+        output.weatherInfo
+            .drive(onNext: { item in
+                print(item)
+            })
+            .disposed(by: disposeBag)
     }
     
     func updateSearchResults(for searchController: UISearchController) {

@@ -9,14 +9,14 @@
 import Foundation
 import RxSwift
 
-final class WeatherNetwork {
+final class WeatherNetwork: WeatherUseCases {
     private let network: Network<WeatherDailyResult>
     
     init(network: Network<WeatherDailyResult>) {
         self.network = network
     }
     
-    public func fetchUpcommingWeekWeather(for location: String) -> Observable<[WeatherDailyResult]> {
+    func getUpcommingWeekWeather(for location: String) -> Observable<[WeatherDailyResult]> {
         return self.network.getUpcommingWeather(for: location, path: "")
     }
 }

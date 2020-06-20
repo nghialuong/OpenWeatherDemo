@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxAlamofire
+import Alamofire
 
 final class Network<T: Decodable> {
     private let endPoint: String
@@ -26,7 +27,9 @@ final class Network<T: Decodable> {
                  .debug()
                  .observeOn(scheduler)
                  .map({ data -> [T] in
-                     return try JSONDecoder().decode([T].self, from: data)
+                    let hay = try JSONDecoder().decode([T].self, from: data)
+                    print(hay)
+                     return hay
                  })
     }
     

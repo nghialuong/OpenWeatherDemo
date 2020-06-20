@@ -20,7 +20,7 @@ final class NetworkWeatherUseCase: WeatherUseCases {
     }
     
     func getUpcommingWeekWeather(for location: String) -> Observable<[WeatherDailyResult]> {
-        return network.fetchUpcommingWeekWeather(for: location)
+        return network.getUpcommingWeekWeather(for: location)
     }
     
 }

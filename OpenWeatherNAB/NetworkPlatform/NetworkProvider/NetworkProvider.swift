@@ -10,12 +10,12 @@ import Foundation
 
 final class NetworkProvider {
     private let apiEndpoint: String
-
-    public init() {
+    
+    init() {
         apiEndpoint = "https://api.openweathermap.org"
     }
     
-    public func makeWeatherNetwork() -> WeatherNetwork {
+    func makeWeatherUseCase() -> WeatherNetwork {
         let network = Network<WeatherDailyResult>(endPoint: apiEndpoint)
         return WeatherNetwork(network: network)
     }
