@@ -8,14 +8,26 @@
 
 import UIKit
 
-class WeatherListViewController: UIViewController {
+class WeatherListViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
+
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Candies"
+        return searchController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Weather Forecast"
         configureTableView()
+        configureSearchController()
     }
     
     private func configureTableView() {
@@ -23,9 +35,15 @@ class WeatherListViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
     }
     
+    private func configureSearchController() {
+        navigationItem.searchController = searchController
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        return
+    }
+    
 }
-
-extension WeatherListViewController: UITableViewDelegate {}
 
 extension WeatherListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,4 +55,7 @@ extension WeatherListViewController: UITableViewDataSource {
         return cell ?? UITableViewCell()
     }
 }
+
+extension WeatherListViewController: UITableViewDelegate {}
+
 
