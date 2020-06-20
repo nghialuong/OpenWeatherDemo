@@ -1,0 +1,6 @@
+framework module Pods_OpenWeatherNAB {
+  umbrella header "Pods-OpenWeatherNAB-umbrella.h"
+
+  export *
+  module * { export * }
+}
