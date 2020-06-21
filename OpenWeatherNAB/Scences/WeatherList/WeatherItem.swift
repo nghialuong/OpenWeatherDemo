@@ -12,5 +12,7 @@ class WeatherItem {
     let cod: String
     init(weatherDailyResult: WeatherWeekResult) {
         self.cod = weatherDailyResult.cod ?? ""
+        
+        print(weatherDailyResult)
     }
 }

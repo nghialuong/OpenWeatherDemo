@@ -45,10 +45,16 @@ class WeatherListViewController: UIViewController, UISearchResultsUpdating, UISe
     }
     
     func bindViewModel() {
-        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
-            .mapToVoid()
+        //        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+        //            .mapToVoid()
+        //            .asDriverOnErrorJustComplete()
+        let searchTrigger = searchController.searchBar.rx.text.orEmpty
+            .throttle(0.5, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .filter { $0.count > 2 }
             .asDriverOnErrorJustComplete()
-        let input = WeatherListViewModel.Input(trigger: viewWillAppear)
+        
+        let input = WeatherListViewModel.Input(searchTrigger: searchTrigger)
         let output = viewModel.transform(input: input)
         output.weatherInfo
             .drive(onNext: { item in

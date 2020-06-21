@@ -20,15 +20,14 @@ final class WeatherListViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        let weatherInfo = input.trigger
-            .flatMapLatest {
-                return self.weatherUseCase.getUpcommingWeekWeather(for: "saigon")
+        let weatherInfo = input.searchTrigger
+            .flatMapLatest({ [unowned self] searchText in
+                return self.weatherUseCase.getUpcommingWeekWeather(for: searchText ?? "")
                     .asDriverOnErrorJustComplete()
                     .map {
                         WeatherItem(weatherDailyResult: $0)
                 }
-        }
-        
+            })
         return  Output(weatherInfo: weatherInfo)
     }
     
@@ -36,7 +35,8 @@ final class WeatherListViewModel: ViewModelType {
 
 extension WeatherListViewModel {
     struct Input {
-        let trigger: Driver<Void>
+        //        let trigger: Driver<Void>
+        let searchTrigger: Driver<String>
     }
     
     struct Output {
