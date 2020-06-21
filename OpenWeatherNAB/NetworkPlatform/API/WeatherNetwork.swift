@@ -17,6 +17,6 @@ final class WeatherNetwork: WeatherUseCases {
     }
     
     func getUpcommingWeekWeather(for location: String) -> Observable<WeatherWeekResult> {
-        return self.network.getUpcommingWeather(for: location, path: "")
+        return self.network.getUpcommingWeekWeather(for: location, path: "")
     }
 }
