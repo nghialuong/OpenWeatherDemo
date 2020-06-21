@@ -11,7 +11,10 @@ import RxSwift
 import RxAlamofire
 import Alamofire
 
-final class Network<T: Decodable> {
+final class Network {
+    
+    private let apiID = "60c6fbeb4b93ac653c492ba806fc346d"
+    private let apiVersion = "2.5"
     private let endPoint: String
     private let scheduler: ConcurrentDispatchQueueScheduler
     
@@ -20,15 +23,24 @@ final class Network<T: Decodable> {
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
     
-    func getUpcommingWeekWeather(for location: String, path: String) -> Observable<T> {
-        let absolutePath = "https://api.openweathermap.org/data/2.5/forecast/daily?q=saigon&cnt=7&appid=60c6fbeb4b93ac653c492ba806fc346d&units=metric"
+    func getUpcommingWeekForecast(for location: String, path: String) -> Observable<[Forescast]> {
+        let absolutePath = "\(endPoint)/data/\(apiVersion)/\(path)/daily?q=\(location.lowercased())&cnt=7&appid=\(apiID)&units=metric"
         return RxAlamofire
             .data(.get, absolutePath)
             .debug()
             .observeOn(scheduler)
-            .map({ data -> T in
-                return try JSONDecoder().decode(T.self, from: data)
+            .map({ data in
+                try JSONDecoder().decode(WeekForecastData.self, from: data)
             })
+            .map {
+                $0.list.map {
+                    Forescast(date: $0.dt, avgTempature: $0.temp.day,
+                              pressure: $0.pressure,
+                              humidity: $0.humidity,
+                              description: $0.weather.description)
+                    
+                }
+        }
     }
     
 }

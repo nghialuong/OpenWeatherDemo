@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-protocol WeatherListNavigator {
+protocol UpcommingWeekForecastNavigator {
     func weatherList() -> UIViewController
 }
 
-class WeatherNavigator: WeatherListNavigator {
+class UpcommingWeekForecastNavigator: UpcommingWeekForecastNavigator {
     
     private let storyboard: UIStoryboard
     private let services: UseCaseProvider

@@ -15,8 +15,8 @@ final class NetworkProvider {
         apiEndpoint = "https://api.openweathermap.org"
     }
     
-    func makeWeatherUseCase() -> WeatherNetwork {
-        let network = Network<WeatherWeekResult>(endPoint: apiEndpoint)
-        return WeatherNetwork(network: network)
+    func makeForecastUseCase() -> ForecastNetwork {
+        let network = Network(endPoint: apiEndpoint)
+        return ForecastNetwork(network: network)
     }
 }

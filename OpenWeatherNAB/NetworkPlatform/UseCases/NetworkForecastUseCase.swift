@@ -9,18 +9,18 @@
 import Foundation
 import RxSwift
 
-final class NetworkWeatherUseCase: WeatherUseCases {
+final class NetworkForecastUseCase: ForecastUseCase {
     
-    private let network: WeatherNetwork
+    private let network: ForecastNetwork
 //    private let cache: Cache
 
-    init(network: WeatherNetwork) {
+    init(network: ForecastNetwork) {
         self.network = network
 //        self.cache = cache
     }
     
-    func getUpcommingWeekWeather(for location: String) -> Observable<WeatherWeekResult> {
-        return network.getUpcommingWeekWeather(for: location)
+    func getUpcommingWeekForecast(for location: String) -> Observable<[Forescast]> {
+        return network.getUpcommingWeekForecast(for: location)
     }
     
 }

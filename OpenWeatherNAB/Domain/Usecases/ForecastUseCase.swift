@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-protocol WeatherUseCases {
-    func getUpcommingWeekWeather(for location: String) -> Observable<WeatherWeekResult> 
+protocol ForecastUseCase {
+    func getUpcommingWeekForecast(for location: String) -> Observable<[Forescast]>
 }

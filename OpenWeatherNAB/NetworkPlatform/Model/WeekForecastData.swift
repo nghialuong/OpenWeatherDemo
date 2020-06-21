@@ -1,12 +1,21 @@
 //
-//  Weather.swift
+//  WeekForecastData.swift
 //  OpenWeatherNAB
 //
-//  Created by Luong Nghia on 6/20/20.
+//  Created by Luong Nghia on 6/21/20.
 //  Copyright © 2020 Luong Nghia. All rights reserved.
 //
 
 import Foundation
+
+// MARK: - WeekForecastData
+struct WeekForecastData: Codable {
+    let city: City
+    let cod: String
+    let message: Double
+    let cnt: Int
+    let list: [List]
+}
 
 // MARK: - City
 struct City: Codable {
@@ -31,12 +40,11 @@ struct List: Codable {
     let weather: [Weather]
     let speed: Double
     let deg, clouds: Int
-    let rain: Double
 
     enum CodingKeys: String, CodingKey {
         case dt, sunrise, sunset, temp
         case feelsLike = "feels_like"
-        case pressure, humidity, weather, speed, deg, clouds, rain
+        case pressure, humidity, weather, speed, deg, clouds
     }
 }
 

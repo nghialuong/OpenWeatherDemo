@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherListTableViewCell: UITableViewCell {
+class UpcommingWeekForecastTableViewCell: UITableViewCell {
     @IBOutlet weak var dateValueLabel: UILabel!
     @IBOutlet weak var tempatureValueLabel: UILabel!
     @IBOutlet weak var pressureValueLabel: UILabel!

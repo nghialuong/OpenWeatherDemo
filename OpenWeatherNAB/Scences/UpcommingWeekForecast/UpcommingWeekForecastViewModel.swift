@@ -10,22 +10,22 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-final class WeatherListViewModel: ViewModelType {
+final class UpcommingWeekForecastViewModel: ViewModelType {
     
-    let weatherUseCase: WeatherUseCases
+    let forecastUseCase: ForecastUseCase
     //    let navigator:
     
-    init(useCase: WeatherUseCases) {
-        self.weatherUseCase = useCase
+    init(useCase: ForecastUseCase) {
+        self.forecastUseCase = useCase
     }
     
     func transform(input: Input) -> Output {
         let weatherInfo = input.searchTrigger
             .flatMapLatest({ [unowned self] searchText in
-                return self.weatherUseCase.getUpcommingWeekWeather(for: searchText ?? "")
+                return self.forecastUseCase.getUpcommingWeekForecast(for: searchText)
                     .asDriverOnErrorJustComplete()
                     .map {
-                        WeatherItem(weatherDailyResult: $0)
+                        ForecastItem(dailyForecastList: $0)
                 }
             })
         return  Output(weatherInfo: weatherInfo)
@@ -33,13 +33,13 @@ final class WeatherListViewModel: ViewModelType {
     
 }
 
-extension WeatherListViewModel {
+extension UpcommingWeekForecastViewModel {
+    
     struct Input {
-        //        let trigger: Driver<Void>
         let searchTrigger: Driver<String>
     }
     
     struct Output {
-        let weatherInfo: Driver<WeatherItem>
+        let weatherInfo: Driver<ForecastItem>
     }
 }

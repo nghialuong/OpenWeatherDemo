@@ -15,7 +15,7 @@ class UpcommingWeekForecastViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: WeatherListViewModel!
+    var viewModel: UpcommingWeekForecastViewModel!
     
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -54,7 +54,7 @@ class UpcommingWeekForecastViewController: UIViewController {
             .filter { $0.count > 2 }
             .asDriverOnErrorJustComplete()
         
-        let input = WeatherListViewModel.Input(searchTrigger: searchTrigger)
+        let input = UpcommingWeekForecastViewModel.Input(searchTrigger: searchTrigger)
         let output = viewModel.transform(input: input)
         output.weatherInfo
             .drive(onNext: { item in
@@ -70,7 +70,7 @@ extension UpcommingWeekForecastViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherListTableViewCell") as? WeatherListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UpcommingWeekForecastCell") as? UpcommingWeekForecastTableViewCell
         return cell ?? UITableViewCell()
     }
 }
