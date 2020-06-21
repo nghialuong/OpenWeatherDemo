@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeatherDailyResult: Codable {
+struct WeatherWeekResult: Codable {
     let city: City
     let cod: String
     let message: Double

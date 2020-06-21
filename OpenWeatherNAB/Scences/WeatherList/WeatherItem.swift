@@ -10,8 +10,7 @@ import Foundation
 
 class WeatherItem {
     let cod: String
-    init(weatherDailyResult: WeatherDailyResult) {
-        self.cod = weatherDailyResult.cod
-        print(weatherDailyResult.cod)
+    init(weatherDailyResult: WeatherWeekResult) {
+        self.cod = weatherDailyResult.cod ?? ""
     }
 }

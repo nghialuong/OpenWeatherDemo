@@ -20,17 +20,15 @@ final class Network<T: Decodable> {
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
     
-    func getUpcommingWeather(for location: String, path: String) -> Observable<[T]> {
+    func getUpcommingWeather(for location: String, path: String) -> Observable<T> {
         let absolutePath = "https://api.openweathermap.org/data/2.5/forecast/daily?q=saigon&cnt=7&appid=60c6fbeb4b93ac653c492ba806fc346d&units=metric"
-           return RxAlamofire
-                 .data(.get, absolutePath)
-                 .debug()
-                 .observeOn(scheduler)
-                 .map({ data -> [T] in
-                    let hay = try JSONDecoder().decode([T].self, from: data)
-                    print(hay)
-                     return hay
-                 })
+        return RxAlamofire
+            .data(.get, absolutePath)
+            .debug()
+            .observeOn(scheduler)
+            .map({ data -> T in
+                return try JSONDecoder().decode(T.self, from: data)
+            })
     }
     
 }

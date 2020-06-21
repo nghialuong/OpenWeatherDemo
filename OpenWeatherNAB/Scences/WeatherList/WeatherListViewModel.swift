@@ -25,9 +25,7 @@ final class WeatherListViewModel: ViewModelType {
                 return self.weatherUseCase.getUpcommingWeekWeather(for: "saigon")
                     .asDriverOnErrorJustComplete()
                     .map {
-                        $0.map {
-                            WeatherItem(weatherDailyResult: $0)
-                        }
+                        WeatherItem(weatherDailyResult: $0)
                 }
         }
         
@@ -42,6 +40,6 @@ extension WeatherListViewModel {
     }
     
     struct Output {
-        let weatherInfo: Driver<[WeatherItem]>
+        let weatherInfo: Driver<WeatherItem>
     }
 }

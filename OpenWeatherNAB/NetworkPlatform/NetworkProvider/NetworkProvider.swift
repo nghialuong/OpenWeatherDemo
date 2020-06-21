@@ -16,7 +16,7 @@ final class NetworkProvider {
     }
     
     func makeWeatherUseCase() -> WeatherNetwork {
-        let network = Network<WeatherDailyResult>(endPoint: apiEndpoint)
+        let network = Network<WeatherWeekResult>(endPoint: apiEndpoint)
         return WeatherNetwork(network: network)
     }
 }

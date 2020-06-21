@@ -10,11 +10,21 @@ import Foundation
 
 // MARK: - City
 struct City: Codable {
+    let id: Int
+    let name: String
+    let coord: Coord
+    let country: String
+    let population, timezone: Int
+}
+
+// MARK: - Coord
+struct Coord: Codable {
+    let lon, lat: Double
 }
 
 // MARK: - List
 struct List: Codable {
-    let date, sunrise, sunset: Int
+    let dt, sunrise, sunset: Int
     let temp: Temp
     let feelsLike: FeelsLike
     let pressure, humidity: Int
@@ -24,8 +34,7 @@ struct List: Codable {
     let rain: Double
 
     enum CodingKeys: String, CodingKey {
-        case sunrise, sunset, temp
-        case date = "dt"
+        case dt, sunrise, sunset, temp
         case feelsLike = "feels_like"
         case pressure, humidity, weather, speed, deg, clouds, rain
     }

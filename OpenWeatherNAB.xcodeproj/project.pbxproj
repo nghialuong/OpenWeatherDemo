@@ -12,7 +12,7 @@
 		FC3BB899249E53E800EDEC94 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB898249E53E800EDEC94 /* NetworkProvider.swift */; };
 		FC3BB89B249E545700EDEC94 /* WeatherNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB89A249E545700EDEC94 /* WeatherNetwork.swift */; };
 		FC3BB89F249E57A200EDEC94 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB89E249E57A200EDEC94 /* Weather.swift */; };
-		FC3BB8A1249E58C100EDEC94 /* WeatherDailyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8A0249E58C100EDEC94 /* WeatherDailyResult.swift */; };
+		FC3BB8A1249E58C100EDEC94 /* WeatherWeekResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8A0249E58C100EDEC94 /* WeatherWeekResult.swift */; };
 		FC3BB8A4249E59D300EDEC94 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8A3249E59D300EDEC94 /* Network.swift */; };
 		FC3BB8A7249E5E5000EDEC94 /* NetworkUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8A6249E5E5000EDEC94 /* NetworkUseCaseProvider.swift */; };
 		FC3BB8AA249E5EC300EDEC94 /* WeatherUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8A9249E5EC300EDEC94 /* WeatherUseCases.swift */; };
@@ -53,7 +53,7 @@
 		FC3BB898249E53E800EDEC94 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		FC3BB89A249E545700EDEC94 /* WeatherNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetwork.swift; sourceTree = "<group>"; };
 		FC3BB89E249E57A200EDEC94 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		FC3BB8A0249E58C100EDEC94 /* WeatherDailyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyResult.swift; sourceTree = "<group>"; };
+		FC3BB8A0249E58C100EDEC94 /* WeatherWeekResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWeekResult.swift; sourceTree = "<group>"; };
 		FC3BB8A3249E59D300EDEC94 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FC3BB8A6249E5E5000EDEC94 /* NetworkUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUseCaseProvider.swift; sourceTree = "<group>"; };
 		FC3BB8A9249E5EC300EDEC94 /* WeatherUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUseCases.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				FC3BB89E249E57A200EDEC94 /* Weather.swift */,
-				FC3BB8A0249E58C100EDEC94 /* WeatherDailyResult.swift */,
+				FC3BB8A0249E58C100EDEC94 /* WeatherWeekResult.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -477,7 +477,7 @@
 				FC489B1E249E0E9D00E4245C /* WeatherListTableViewCell.swift in Sources */,
 				FC3BB8A4249E59D300EDEC94 /* Network.swift in Sources */,
 				FC3BB899249E53E800EDEC94 /* NetworkProvider.swift in Sources */,
-				FC3BB8A1249E58C100EDEC94 /* WeatherDailyResult.swift in Sources */,
+				FC3BB8A1249E58C100EDEC94 /* WeatherWeekResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
