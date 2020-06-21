@@ -11,18 +11,15 @@ import RxCocoa
 import RxSwift
 
 class UpcommingWeekForecastViewController: UIViewController {
-    let disposeBag = DisposeBag()
-    
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel: UpcommingWeekForecastViewModel!
+    let disposeBag = DisposeBag()
     
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
-//        searchController.searchResultsUpdater = self
-//        searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Candies"
+        searchController.searchBar.placeholder = "City name"
         return searchController
     }()
     
@@ -45,10 +42,8 @@ class UpcommingWeekForecastViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        //        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
-        //            .mapToVoid()
-        //            .asDriverOnErrorJustComplete()
         let searchTrigger = searchController.searchBar.rx.text.orEmpty
+            .skip(1)
             .throttle(0.5, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .filter { $0.count > 2 }
@@ -56,25 +51,14 @@ class UpcommingWeekForecastViewController: UIViewController {
         
         let input = UpcommingWeekForecastViewModel.Input(searchTrigger: searchTrigger)
         let output = viewModel.transform(input: input)
-        output.weatherInfo
-            .drive(onNext: { item in
-                print(item)
+        
+        output.upcommingWeekForecast
+            .drive(tableView.rx.items(cellIdentifier: "UpcommingWeekForecastCell", cellType: UpcommingWeekForecastTableViewCell.self))({ _, viewModel, cell in
+                cell.bind(viewModel)
             })
             .disposed(by: disposeBag)
     }
 }
 
-extension UpcommingWeekForecastViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UpcommingWeekForecastCell") as? UpcommingWeekForecastTableViewCell
-        return cell ?? UITableViewCell()
-    }
-}
-
-extension UpcommingWeekForecastViewController: UITableViewDelegate {}
 
 

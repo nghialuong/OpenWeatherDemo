@@ -122,10 +122,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="bNd-wp-4XN"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Jcl-Gn-1FI"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

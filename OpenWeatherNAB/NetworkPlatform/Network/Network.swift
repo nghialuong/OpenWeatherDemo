@@ -32,14 +32,10 @@ final class Network {
             .map({ data in
                 try JSONDecoder().decode(WeekForecastData.self, from: data)
             })
-            .map {
-                $0.list.map {
-                    Forescast(date: $0.dt, avgTempature: $0.temp.day,
-                              pressure: $0.pressure,
-                              humidity: $0.humidity,
-                              description: $0.weather.description)
-                    
-                }
+            .map { $0.list.map { Forescast(date: $0.dt, avgTempature: $0.temp.day,
+                                           pressure: $0.pressure,
+                                           humidity: $0.humidity,
+                                           description: $0.weather.description) }
         }
     }
     

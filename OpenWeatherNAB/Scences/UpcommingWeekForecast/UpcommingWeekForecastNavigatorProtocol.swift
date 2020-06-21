@@ -14,7 +14,6 @@ protocol UpcommingWeekForecastNavigatorProtocol {
 }
 
 class UpcommingWeekForecastNavigator: UpcommingWeekForecastNavigatorProtocol {
-    
     private let storyboard: UIStoryboard
     private let services: UseCaseProvider
     
@@ -25,7 +24,7 @@ class UpcommingWeekForecastNavigator: UpcommingWeekForecastNavigatorProtocol {
     
     func upcommingWeekForecastVC() -> UIViewController {
         let viewcontroller = storyboard.instantiateViewController(identifier: "UpcommingWeekForecastViewController") as UpcommingWeekForecastViewController
-        viewcontroller.viewModel = UpcommingWeekForecastViewModel(useCase: services.makeWeatherUseCase())
+        viewcontroller.viewModel = UpcommingWeekForecastViewModel(useCase: services.makeForecastUseCase())
         return viewcontroller
     }
     

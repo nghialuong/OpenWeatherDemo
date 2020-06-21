@@ -16,7 +16,7 @@ final class NetworkUseCaseProvider: UseCaseProvider {
         networkProvider = NetworkProvider()
     }
     
-    public func makeWeatherUseCase() -> ForecastUseCase {
+    public func makeForecastUseCase() -> ForecastUseCase {
         return NetworkForecastUseCase(network: networkProvider.makeForecastUseCase())
     }
     
