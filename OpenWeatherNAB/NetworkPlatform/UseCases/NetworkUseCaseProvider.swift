@@ -9,15 +9,13 @@
 import Foundation
 
 final class NetworkUseCaseProvider: UseCaseProvider {
-    
     private let networkProvider: NetworkProvider
     
-    public init() {
+    init() {
         networkProvider = NetworkProvider()
     }
     
-    public func makeForecastUseCase() -> ForecastUseCase {
+    func makeForecastUseCase() -> ForecastUseCase {
         return NetworkForecastUseCase(network: networkProvider.makeForecastUseCase())
     }
-    
 }

@@ -12,7 +12,6 @@ import RxSwift
 
 final class UpcommingWeekForecastViewModel: ViewModelType {
     let forecastUseCase: ForecastUseCase
-    //    let navigator:
     
     init(useCase: ForecastUseCase) {
         self.forecastUseCase = useCase
@@ -25,7 +24,7 @@ final class UpcommingWeekForecastViewModel: ViewModelType {
                     .asDriverOnErrorJustComplete()
                     .map { $0.map { ForecastItemModel(forecast: $0) } }
             })
-        return  Output(upcommingWeekForecast: upcommingWeekForecast)
+        return Output(upcommingWeekForecast: upcommingWeekForecast)
     }
 }
 

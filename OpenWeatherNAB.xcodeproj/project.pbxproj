@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18C5DF25D1BA81250EA02BC0 /* Pods_OpenWeatherNAB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246C68C00993ACC20D6ACBB2 /* Pods_OpenWeatherNAB.framework */; };
-		F69877811CFFEB190E587EB3 /* Pods_OpenWeatherNABTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CFFC4568B6448D114821C4 /* Pods_OpenWeatherNABTests.framework */; };
+		70D51FC59FE3BC3D50EC4A15 /* Pods_OpenWeatherNAB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9658662F6727C58B807ABD /* Pods_OpenWeatherNAB.framework */; };
+		FC128F7E24A0B5D500B0CEF7 /* UpcommingWeekForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC128F7D24A0B5D500B0CEF7 /* UpcommingWeekForecastTests.swift */; };
 		FC3BB899249E53E800EDEC94 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB898249E53E800EDEC94 /* NetworkProvider.swift */; };
 		FC3BB89B249E545700EDEC94 /* ForecastNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB89A249E545700EDEC94 /* ForecastNetwork.swift */; };
 		FC3BB8A4249E59D300EDEC94 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8A3249E59D300EDEC94 /* Network.swift */; };
@@ -19,7 +19,7 @@
 		FC3BB8B1249E64FC00EDEC94 /* UpcommingWeekForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8B0249E64FC00EDEC94 /* UpcommingWeekForecastViewModel.swift */; };
 		FC3BB8B4249E6A7600EDEC94 /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8B3249E6A7600EDEC94 /* Observable+Ext.swift */; };
 		FC3BB8B6249E701C00EDEC94 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8B5249E701C00EDEC94 /* UseCaseProvider.swift */; };
-		FC3BB8B8249E89CD00EDEC94 /* UpcommingWeekForecastNavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8B7249E89CD00EDEC94 /* UpcommingWeekForecastNavigatorProtocol.swift */; };
+		FC3BB8B8249E89CD00EDEC94 /* UpcommingWeekForecastNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8B7249E89CD00EDEC94 /* UpcommingWeekForecastNavigator.swift */; };
 		FC3BB8BA249EB2A800EDEC94 /* ForecastItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8B9249EB2A800EDEC94 /* ForecastItemModel.swift */; };
 		FC3BB8C3249FAD3E00EDEC94 /* WeekForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8C2249FAD3E00EDEC94 /* WeekForecastData.swift */; };
 		FC3BB8C5249FADA000EDEC94 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8C4249FADA000EDEC94 /* Forecast.swift */; };
@@ -29,9 +29,9 @@
 		FC489AFD249E05C500E4245C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC489AFB249E05C500E4245C /* Main.storyboard */; };
 		FC489AFF249E05C600E4245C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC489AFE249E05C600E4245C /* Assets.xcassets */; };
 		FC489B02249E05C600E4245C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC489B00249E05C600E4245C /* LaunchScreen.storyboard */; };
-		FC489B0D249E05C600E4245C /* OpenWeatherNABTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC489B0C249E05C600E4245C /* OpenWeatherNABTests.swift */; };
 		FC489B19249E064F00E4245C /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC489B18249E064F00E4245C /* Application.swift */; };
 		FC489B1E249E0E9D00E4245C /* UpcommingWeekForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC489B1D249E0E9D00E4245C /* UpcommingWeekForecastTableViewCell.swift */; };
+		FF0FB9AE59B472596A6B2C86 /* Pods_OpenWeatherNABTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945D5C64FF1417F0A58B821C /* Pods_OpenWeatherNABTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17CFFC4568B6448D114821C4 /* Pods_OpenWeatherNABTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWeatherNABTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		246C68C00993ACC20D6ACBB2 /* Pods_OpenWeatherNAB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWeatherNAB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27130E1DB9EE954DF7C1D722 /* Pods-OpenWeatherNAB-OpenWeatherNABTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherNAB-OpenWeatherNABTests.debug.xcconfig"; path = "Target Support Files/Pods-OpenWeatherNAB-OpenWeatherNABTests/Pods-OpenWeatherNAB-OpenWeatherNABTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3B9658662F6727C58B807ABD /* Pods_OpenWeatherNAB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWeatherNAB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C04FEF2DF89DDDAA8EAF03E /* Pods-OpenWeatherNABTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherNABTests.debug.xcconfig"; path = "Target Support Files/Pods-OpenWeatherNABTests/Pods-OpenWeatherNABTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8FC4D922E5E4DF5ADFF7CC13 /* Pods-OpenWeatherNAB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherNAB.debug.xcconfig"; path = "Target Support Files/Pods-OpenWeatherNAB/Pods-OpenWeatherNAB.debug.xcconfig"; sourceTree = "<group>"; };
+		945D5C64FF1417F0A58B821C /* Pods_OpenWeatherNABTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWeatherNABTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0E9066AFB49D8EC74CCF6E0 /* Pods-OpenWeatherNAB-OpenWeatherNABTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherNAB-OpenWeatherNABTests.release.xcconfig"; path = "Target Support Files/Pods-OpenWeatherNAB-OpenWeatherNABTests/Pods-OpenWeatherNAB-OpenWeatherNABTests.release.xcconfig"; sourceTree = "<group>"; };
+		FC128F7D24A0B5D500B0CEF7 /* UpcommingWeekForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcommingWeekForecastTests.swift; sourceTree = "<group>"; };
 		FC356EB1C27CBBCD9E1AFA12 /* Pods-OpenWeatherNABTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherNABTests.release.xcconfig"; path = "Target Support Files/Pods-OpenWeatherNABTests/Pods-OpenWeatherNABTests.release.xcconfig"; sourceTree = "<group>"; };
 		FC3BB898249E53E800EDEC94 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		FC3BB89A249E545700EDEC94 /* ForecastNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastNetwork.swift; sourceTree = "<group>"; };
@@ -60,7 +63,7 @@
 		FC3BB8B0249E64FC00EDEC94 /* UpcommingWeekForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcommingWeekForecastViewModel.swift; sourceTree = "<group>"; };
 		FC3BB8B3249E6A7600EDEC94 /* Observable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
 		FC3BB8B5249E701C00EDEC94 /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
-		FC3BB8B7249E89CD00EDEC94 /* UpcommingWeekForecastNavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcommingWeekForecastNavigatorProtocol.swift; sourceTree = "<group>"; };
+		FC3BB8B7249E89CD00EDEC94 /* UpcommingWeekForecastNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcommingWeekForecastNavigator.swift; sourceTree = "<group>"; };
 		FC3BB8B9249EB2A800EDEC94 /* ForecastItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastItemModel.swift; sourceTree = "<group>"; };
 		FC3BB8C2249FAD3E00EDEC94 /* WeekForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForecastData.swift; sourceTree = "<group>"; };
 		FC3BB8C4249FADA000EDEC94 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
@@ -73,7 +76,6 @@
 		FC489B01249E05C600E4245C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC489B03249E05C600E4245C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC489B08249E05C600E4245C /* OpenWeatherNABTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenWeatherNABTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC489B0C249E05C600E4245C /* OpenWeatherNABTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherNABTests.swift; sourceTree = "<group>"; };
 		FC489B0E249E05C600E4245C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC489B18249E064F00E4245C /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		FC489B1D249E0E9D00E4245C /* UpcommingWeekForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcommingWeekForecastTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C5DF25D1BA81250EA02BC0 /* Pods_OpenWeatherNAB.framework in Frameworks */,
+				70D51FC59FE3BC3D50EC4A15 /* Pods_OpenWeatherNAB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F69877811CFFEB190E587EB3 /* Pods_OpenWeatherNABTests.framework in Frameworks */,
+				FF0FB9AE59B472596A6B2C86 /* Pods_OpenWeatherNABTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +105,8 @@
 		1D59DE3F55EE9D2A0BE7E0FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				246C68C00993ACC20D6ACBB2 /* Pods_OpenWeatherNAB.framework */,
-				17CFFC4568B6448D114821C4 /* Pods_OpenWeatherNABTests.framework */,
+				3B9658662F6727C58B807ABD /* Pods_OpenWeatherNAB.framework */,
+				945D5C64FF1417F0A58B821C /* Pods_OpenWeatherNABTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,8 +118,18 @@
 				FE51EE0FD8A2E6F345689AD8 /* Pods-OpenWeatherNAB.release.xcconfig */,
 				6C04FEF2DF89DDDAA8EAF03E /* Pods-OpenWeatherNABTests.debug.xcconfig */,
 				FC356EB1C27CBBCD9E1AFA12 /* Pods-OpenWeatherNABTests.release.xcconfig */,
+				27130E1DB9EE954DF7C1D722 /* Pods-OpenWeatherNAB-OpenWeatherNABTests.debug.xcconfig */,
+				B0E9066AFB49D8EC74CCF6E0 /* Pods-OpenWeatherNAB-OpenWeatherNABTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FC128F7C24A0AE5700B0CEF7 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				FC3BB8B7249E89CD00EDEC94 /* UpcommingWeekForecastNavigator.swift */,
+			);
+			path = Navigator;
 			sourceTree = "<group>";
 		};
 		FC3BB895249E53A700EDEC94 /* NetworkPlatform */ = {
@@ -257,7 +269,7 @@
 		FC489B0B249E05C600E4245C /* OpenWeatherNABTests */ = {
 			isa = PBXGroup;
 			children = (
-				FC489B0C249E05C600E4245C /* OpenWeatherNABTests.swift */,
+				FC128F7D24A0B5D500B0CEF7 /* UpcommingWeekForecastTests.swift */,
 				FC489B0E249E05C600E4245C /* Info.plist */,
 			);
 			path = OpenWeatherNABTests;
@@ -282,10 +294,10 @@
 		FC489B1B249E0E7D00E4245C /* UpcommingWeekForecast */ = {
 			isa = PBXGroup;
 			children = (
+				FC128F7C24A0AE5700B0CEF7 /* Navigator */,
 				FC489B1C249E0E8700E4245C /* Cell */,
 				FC489AF9249E05C500E4245C /* UpcommingWeekForecastViewController.swift */,
 				FC3BB8B0249E64FC00EDEC94 /* UpcommingWeekForecastViewModel.swift */,
-				FC3BB8B7249E89CD00EDEC94 /* UpcommingWeekForecastNavigatorProtocol.swift */,
 				FC3BB8B9249EB2A800EDEC94 /* ForecastItemModel.swift */,
 			);
 			path = UpcommingWeekForecast;
@@ -310,7 +322,7 @@
 				FC489AEE249E05C500E4245C /* Sources */,
 				FC489AEF249E05C500E4245C /* Frameworks */,
 				FC489AF0249E05C500E4245C /* Resources */,
-				6C29BE4493E4673426DDC865 /* [CP] Embed Pods Frameworks */,
+				A82F7C806C03915CA37FD240 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +341,7 @@
 				FC489B04249E05C600E4245C /* Sources */,
 				FC489B05249E05C600E4245C /* Frameworks */,
 				FC489B06249E05C600E4245C /* Resources */,
+				109330D17B1E931840BBC692 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -399,6 +412,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		109330D17B1E931840BBC692 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenWeatherNABTests/Pods-OpenWeatherNABTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenWeatherNABTests/Pods-OpenWeatherNABTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenWeatherNABTests/Pods-OpenWeatherNABTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3AF6840761B7A36DA9233957 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -419,23 +449,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6C29BE4493E4673426DDC865 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OpenWeatherNAB/Pods-OpenWeatherNAB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OpenWeatherNAB/Pods-OpenWeatherNAB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenWeatherNAB/Pods-OpenWeatherNAB-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9A25BD6B51DAD25CF8042D67 /* [CP] Check Pods Manifest.lock */ = {
@@ -460,6 +473,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A82F7C806C03915CA37FD240 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenWeatherNAB/Pods-OpenWeatherNAB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenWeatherNAB/Pods-OpenWeatherNAB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenWeatherNAB/Pods-OpenWeatherNAB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -474,7 +504,7 @@
 				FC3BB8A7249E5E5000EDEC94 /* NetworkUseCaseProvider.swift in Sources */,
 				FC3BB8AA249E5EC300EDEC94 /* ForecastUseCase.swift in Sources */,
 				FC3BB8AC249E614200EDEC94 /* NetworkForecastUseCase.swift in Sources */,
-				FC3BB8B8249E89CD00EDEC94 /* UpcommingWeekForecastNavigatorProtocol.swift in Sources */,
+				FC3BB8B8249E89CD00EDEC94 /* UpcommingWeekForecastNavigator.swift in Sources */,
 				FC3BB8BA249EB2A800EDEC94 /* ForecastItemModel.swift in Sources */,
 				FC3BB8AF249E63FF00EDEC94 /* ViewModelType.swift in Sources */,
 				FC489AF6249E05C500E4245C /* AppDelegate.swift in Sources */,
@@ -493,7 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC489B0D249E05C600E4245C /* OpenWeatherNABTests.swift in Sources */,
+				FC128F7E24A0B5D500B0CEF7 /* UpcommingWeekForecastTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

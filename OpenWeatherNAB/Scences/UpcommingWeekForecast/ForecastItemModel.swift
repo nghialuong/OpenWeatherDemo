@@ -26,19 +26,23 @@ struct ForecastItemModel {
 
 extension ForecastItemModel {
     func dateToString() -> String {
-        return "thu 7 ngay 13"
+        let date = Date(timeIntervalSince1970: TimeInterval(self.date))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "E, d MMM yyyy"
+        return dateFormatter.string(from: date)
     }
     
     func tempartureToString() -> String {
-        return "36 do C"
+        return "\(Int(temparture))°C"
     }
     
     func pressureToString() -> String {
-        return "20"
+        return "\(pressure)"
     }
     
     func humitidyToString() -> String {
-        return "38%"
+        return "\(humidity)%"
     }
     
 }

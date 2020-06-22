@@ -12,7 +12,6 @@ import RxAlamofire
 import Alamofire
 
 final class Network {
-    
     private let apiID = "60c6fbeb4b93ac653c492ba806fc346d"
     private let apiVersion = "2.5"
     private let endPoint: String
@@ -35,8 +34,7 @@ final class Network {
             .map { $0.list.map { Forescast(date: $0.dt, avgTempature: $0.temp.day,
                                            pressure: $0.pressure,
                                            humidity: $0.humidity,
-                                           description: $0.weather.description) }
+                                           description: $0.weather[0].weatherDescription) }
         }
     }
-    
 }

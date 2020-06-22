@@ -12,7 +12,6 @@ import RxSwift
 
 class UpcommingWeekForecastViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
     var viewModel: UpcommingWeekForecastViewModel!
     let disposeBag = DisposeBag()
     
@@ -25,7 +24,10 @@ class UpcommingWeekForecastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
+    }
+    
+    private func setupUI() {
         self.title = "Weather Forecast"
         configureTableView()
         configureSearchController()
@@ -43,8 +45,7 @@ class UpcommingWeekForecastViewController: UIViewController {
     
     private func bindViewModel() {
         let searchTrigger = searchController.searchBar.rx.text.orEmpty
-            .skip(1)
-            .throttle(0.5, scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .filter { $0.count > 2 }
             .asDriverOnErrorJustComplete()
