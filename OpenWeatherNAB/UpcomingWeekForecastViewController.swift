@@ -15,10 +15,10 @@ class UpcomingWeekForecastViewController: UIViewController {
     var viewModel: UpcomingWeekForecastViewModel!
     let disposeBag = DisposeBag()
     
-    var errorBinding: Binder<Error> {
-        return Binder(self, binding: { (vc, _) in
-            let alert = UIAlertController(title: "Search error",
-                                          message: "Something went wrong",
+    var errorBinding: Binder<ApiError> {
+        return Binder(self, binding: { (vc, error) in
+            let alert = UIAlertController(title: error.description,
+                                          message: nil,
                                           preferredStyle: .alert)
             let action = UIAlertAction(title: "Dismiss",
                                        style: UIAlertAction.Style.cancel,
@@ -57,13 +57,15 @@ class UpcomingWeekForecastViewController: UIViewController {
     }
     
     private func bindViewModel() {
+        let noSearchingTrigger = searchController.searchBar.rx.cancelButtonClicked
+            .asDriver()
         let searchTrigger = searchController.searchBar.rx.text.orEmpty
             .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .filter { $0.count > 2 }
             .asDriverOnErrorJustComplete()
         
-        let input = UpcomingWeekForecastViewModel.Input(searchTrigger: searchTrigger)
+        let input = UpcomingWeekForecastViewModel.Input(searchTrigger: searchTrigger, noSearchingTrigger: noSearchingTrigger)
         let output = viewModel.transform(input: input)
         
         output.upcomingWeekForecast
@@ -71,7 +73,7 @@ class UpcomingWeekForecastViewController: UIViewController {
                 cell.bind(viewModel)
             })
             .disposed(by: disposeBag)
-        
+                
         output.error
             .drive(errorBinding)
             .disposed(by: disposeBag)

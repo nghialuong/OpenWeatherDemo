@@ -11,9 +11,26 @@ import RxSwift
 import RxAlamofire
 import Alamofire
 
+enum ApiError: Error {
+    case cityNotFound
+    case serverFailure
+    case invalidKey
+    
+    var description: String {
+        switch self {
+        case .cityNotFound:
+            return "City Not Found"
+        case .serverFailure:
+            return "Server Failure"
+        case .invalidKey:
+            return "Invalid Key"
+        }
+    }
+}
+
 final class Network {
-    private let apiID = "60c6fbeb4b93ac653c492ba806fc346d"
-    private let apiVersion = "2.5"
+    static private let apiID = "60c6fbeb4b93ac653c492ba806fc346d"
+    static private let apiVersion = "2.5"
     private let endPoint: String
     private let scheduler: ConcurrentDispatchQueueScheduler
     
@@ -23,18 +40,26 @@ final class Network {
     }
     
     func getUpcomingWeekForecast(for location: String, path: String) -> Observable<[Forescast]> {
-        let absolutePath = "\(endPoint)/data/\(apiVersion)/\(path)/daily?q=\(location.lowercased())&cnt=7&appid=\(apiID)&units=metric"
+        let absolutePath = "\(endPoint)/data/\(Network.apiVersion)/\(path)/daily?q=\(location.lowercased())&cnt=7&appid=\(Network.apiID)&units=metric"
         return RxAlamofire
-            .data(.get, absolutePath)
+            .requestData(.get, absolutePath)
             .debug()
             .observeOn(scheduler)
-            .map({ data in
-                try JSONDecoder().decode(WeekForecastData.self, from: data)
-            })
-            .map { $0.list.map { Forescast(date: $0.dt, avgTempature: $0.temp.day,
-                                           pressure: $0.pressure,
-                                           humidity: $0.humidity,
-                                           description: $0.weather[0].weatherDescription) }
+            .map { response, data in
+                if 200 ..< 300 ~= response.statusCode {
+                    let forecastData = try JSONDecoder().decode(WeekForecastData.self, from: data)
+                    return forecastData.list.map { Forescast(date: $0.dt, avgTempature: $0.temp.day,
+                                                             pressure: $0.pressure,
+                                                             humidity: $0.humidity,
+                                                             description: $0.weather[0].weatherDescription) }
+                } else if response.statusCode == 401 {
+                    throw ApiError.invalidKey
+                } else if 400 ..< 500 ~= response.statusCode {
+                    throw ApiError.cityNotFound
+                } else {
+                    throw ApiError.serverFailure
+                }
+                
         }
     }
 }
