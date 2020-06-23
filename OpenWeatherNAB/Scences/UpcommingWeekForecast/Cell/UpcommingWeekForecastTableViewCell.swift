@@ -22,5 +22,4 @@ class UpcomingWeekForecastTableViewCell: UITableViewCell {
         self.humidityValueLabel.text = viewModel.humitidyToString()
         self.descriptionValueLabel.text = viewModel.description
     }
-    
 }

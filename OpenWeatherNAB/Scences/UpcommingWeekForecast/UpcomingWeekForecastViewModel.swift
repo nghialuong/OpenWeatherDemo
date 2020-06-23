@@ -41,7 +41,6 @@ final class UpcomingWeekForecastViewModel: ViewModelType {
 extension UpcomingWeekForecastViewModel {
     struct Input {
         let searchTrigger: Driver<String>
-        let noSearchingTrigger: Driver<Void>
     }
     
     struct Output {

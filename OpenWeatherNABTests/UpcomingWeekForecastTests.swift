@@ -26,7 +26,7 @@ class UpcomingWeekForecastTests: XCTestCase {
         disposeBag = DisposeBag()
     }
     
-    func test_searchForecastByLocation() {
+    func test_searchForecastByLocationSuccess() {
         let forecastItems = scheduler.createObserver([ForecastItemModel].self)
         let searchTrigger = scheduler.createColdObservable([.next(10, "saigon"),
                                                             .completed(20)])
@@ -41,6 +41,27 @@ class UpcomingWeekForecastTests: XCTestCase {
         scheduler.start()
         
         XCTAssertEqual(try output.upcomingWeekForecast.toBlocking().single().count, 7)
+    }
+    
+    func test_searchForecastByLocationFailureCityNotFound() {
+        let searchTrigger = scheduler.createColdObservable([.next(10, "99999"),
+                                                            .completed(20)])
+            .asDriverOnErrorJustComplete()
+        
+        let input = UpcomingWeekForecastViewModel.Input(searchTrigger: searchTrigger)
+        let output = viewModel.transform(input: input)
+        
+        output.upcomingWeekForecast
+            .drive()
+            .disposed(by: disposeBag)
+        
+        output.error
+            .drive()
+            .disposed(by: disposeBag)
+        
+        scheduler.start()
+        XCTAssertEqual(try output.error.toBlocking().first(), ApiError.cityNotFound)
+        
     }
 }
 

@@ -11,23 +11,6 @@ import RxSwift
 import RxAlamofire
 import Alamofire
 
-enum ApiError: Error {
-    case cityNotFound
-    case serverFailure
-    case invalidKey
-    
-    var description: String {
-        switch self {
-        case .cityNotFound:
-            return "City Not Found"
-        case .serverFailure:
-            return "Server Failure"
-        case .invalidKey:
-            return "Invalid Key"
-        }
-    }
-}
-
 final class Network {
     static private let apiID = "60c6fbeb4b93ac653c492ba806fc346d"
     static private let apiVersion = "2.5"
@@ -59,7 +42,6 @@ final class Network {
                 } else {
                     throw ApiError.serverFailure
                 }
-                
         }
     }
 }
