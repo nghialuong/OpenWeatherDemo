@@ -18,7 +18,7 @@ final class ForecastNetwork: ForecastUseCase {
         self.network = network
     }
     
-    func getUpcommingWeekForecast(for location: String) -> Observable<[Forescast]> {
-        return self.network.getUpcommingWeekForecast(for: location, path: path)
+    func getUpcomingWeekForecast(for location: String) -> Observable<[Forescast]> {
+        return self.network.getUpcomingWeekForecast(for: location, path: path)
     }
 }

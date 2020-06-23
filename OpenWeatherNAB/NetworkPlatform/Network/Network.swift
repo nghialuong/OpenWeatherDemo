@@ -22,7 +22,7 @@ final class Network {
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
     
-    func getUpcommingWeekForecast(for location: String, path: String) -> Observable<[Forescast]> {
+    func getUpcomingWeekForecast(for location: String, path: String) -> Observable<[Forescast]> {
         let absolutePath = "\(endPoint)/data/\(apiVersion)/\(path)/daily?q=\(location.lowercased())&cnt=7&appid=\(apiID)&units=metric"
         return RxAlamofire
             .data(.get, absolutePath)

@@ -13,7 +13,7 @@ final class Application {
 
     func configureMainInterface(in window: UIWindow) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let navigation = UINavigationController(rootViewController: UpcommingWeekForecastNavigator(storyboard: storyboard, services: NetworkUseCaseProvider()).upcommingWeekForecastVC())
+        let navigation = UINavigationController(rootViewController: UpcomingWeekForecastNavigator(storyboard: storyboard, services: NetworkUseCaseProvider()).upcomingWeekForecastVC())
         window.rootViewController = navigation
         window.makeKeyAndVisible()
     }
