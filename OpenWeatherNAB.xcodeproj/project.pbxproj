@@ -260,7 +260,7 @@
 			children = (
 				FC3BB8B2249E6A5D00EDEC94 /* Utility */,
 				FC3BB8AD249E63F700EDEC94 /* Common */,
-				FC489B1A249E0E6500E4245C /* Scences */,
+				FC489B1A249E0E6500E4245C /* Presentation */,
 				FC489B17249E062F00E4245C /* Application */,
 				FC3BB895249E53A700EDEC94 /* NetworkPlatform */,
 				FC3BB89C249E56FC00EDEC94 /* Domain */,
@@ -292,12 +292,12 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		FC489B1A249E0E6500E4245C /* Scences */ = {
+		FC489B1A249E0E6500E4245C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				FC489B1B249E0E7D00E4245C /* UpcommingWeekForecast */,
 			);
-			path = Scences;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		FC489B1B249E0E7D00E4245C /* UpcommingWeekForecast */ = {
