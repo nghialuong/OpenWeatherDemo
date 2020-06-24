@@ -32,7 +32,7 @@ class UpcomingWeekForecastTests: XCTestCase {
                                                             .completed(20)])
             .asDriverOnErrorJustComplete()
         
-        let input = UpcomingWeekForecastViewModel.Input(searchTrigger: searchTrigger)
+        let input = UpcomingWeekForecastViewModel.Input(searchTrigger: searchTrigger, clearSearchTrigger: Driver.empty())
         let output = viewModel.transform(input: input)
         output.upcomingWeekForecast
             .drive(forecastItems)
@@ -48,7 +48,7 @@ class UpcomingWeekForecastTests: XCTestCase {
                                                             .completed(20)])
             .asDriverOnErrorJustComplete()
         
-        let input = UpcomingWeekForecastViewModel.Input(searchTrigger: searchTrigger)
+        let input = UpcomingWeekForecastViewModel.Input(searchTrigger: searchTrigger, clearSearchTrigger: Driver.empty())
         let output = viewModel.transform(input: input)
         
         output.upcomingWeekForecast

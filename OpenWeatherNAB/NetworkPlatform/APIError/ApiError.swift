@@ -12,6 +12,7 @@ enum ApiError: Error {
     case cityNotFound
     case serverFailure
     case invalidKey
+    case other
     
     var description: String {
         switch self {
@@ -21,6 +22,8 @@ enum ApiError: Error {
             return "Server Failure"
         case .invalidKey:
             return "Invalid Key"
+        case .other:
+            return "Something is wrong"
         }
     }
 }
