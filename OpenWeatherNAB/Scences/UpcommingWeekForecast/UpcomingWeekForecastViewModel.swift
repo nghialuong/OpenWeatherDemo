@@ -13,7 +13,6 @@ import RxSwift
 final class UpcomingWeekForecastViewModel: ViewModelType {
     let forecastUseCase: ForecastUseCase
     let errorTrigger = PublishSubject<ApiError>()
-    var cache = [String: [Forescast]]()
     
     init(useCase: ForecastUseCase) {
         self.forecastUseCase = useCase
@@ -26,9 +25,7 @@ final class UpcomingWeekForecastViewModel: ViewModelType {
         let upcomingWeekForecast = input.searchTrigger
             .flatMapLatest { [unowned self] searchText in
                 return self.forecastUseCase.getUpcomingWeekForecast(for: searchText)
-                    .do(onNext: { items in
-                        self.cache[searchText] = items
-                    }, onError: { error in
+                    .do(onError: { error in
                         if let error = error as? ApiError {
                             self.errorTrigger.onNext(error)
                         } else {
@@ -41,13 +38,6 @@ final class UpcomingWeekForecastViewModel: ViewModelType {
         
         return Output(upcomingWeekForecast: Driver.merge(upcomingWeekForecast, clearSearchResult),
                       error: errorTrigger.asDriverOnErrorJustComplete())
-    }
-    
-    private func itemModelFromCache(by searchText: String) -> Observable<[ForecastItemModel]> {
-        if let cachedData = self.cache[searchText] {
-            return Observable.just(cachedData.map{ ForecastItemModel(forecast: $0) })
-        }
-        return Observable.just([])
     }
 }
 
