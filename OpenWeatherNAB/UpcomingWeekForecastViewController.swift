@@ -57,13 +57,16 @@ class UpcomingWeekForecastViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        let searchTrigger = searchController.searchBar.rx.text.orEmpty
-            .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+        let searchTextChanged = searchController.searchBar.rx.text.orEmpty
+            .skip(1)
+        let searchTrigger = searchTextChanged
+            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .filter { $0.count > 2 }
             .asDriverOnErrorJustComplete()
+        let clearSearchTrigger = searchTextChanged
         
-        let input = UpcomingWeekForecastViewModel.Input(searchTrigger: searchTrigger)
+        let input = UpcomingWeekForecastViewModel.Input(searchTrigger: searchTrigger, clearSearchTrigger: clearSearchTrigger.asDriverOnErrorJustComplete())
         let output = viewModel.transform(input: input)
         
         output.upcomingWeekForecast
@@ -71,7 +74,7 @@ class UpcomingWeekForecastViewController: UIViewController {
                 cell.bind(viewModel)
             })
             .disposed(by: disposeBag)
-                
+        
         output.error
             .drive(errorBinding)
             .disposed(by: disposeBag)
