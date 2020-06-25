@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Forescast {
+struct Forecast {
     let date: Int
     let avgTempature: Double
     let pressure: Int

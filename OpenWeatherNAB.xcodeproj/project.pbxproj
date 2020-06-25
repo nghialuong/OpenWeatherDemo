@@ -24,6 +24,7 @@
 		FC3BB8C3249FAD3E00EDEC94 /* WeekForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8C2249FAD3E00EDEC94 /* WeekForecastData.swift */; };
 		FC3BB8C5249FADA000EDEC94 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BB8C4249FADA000EDEC94 /* Forecast.swift */; };
 		FC46040B24A4E70500ABD5C7 /* RxAlamofire+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46040A24A4E70500ABD5C7 /* RxAlamofire+Ext.swift */; };
+		FC46040D24A4EC5B00ABD5C7 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46040C24A4EC5B00ABD5C7 /* CacheTests.swift */; };
 		FC489AF6249E05C500E4245C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC489AF5249E05C500E4245C /* AppDelegate.swift */; };
 		FC489AF8249E05C500E4245C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC489AF7249E05C500E4245C /* SceneDelegate.swift */; };
 		FC489AFA249E05C500E4245C /* UpcomingWeekForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC489AF9249E05C500E4245C /* UpcomingWeekForecastViewController.swift */; };
@@ -72,6 +73,7 @@
 		FC3BB8C2249FAD3E00EDEC94 /* WeekForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForecastData.swift; sourceTree = "<group>"; };
 		FC3BB8C4249FADA000EDEC94 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		FC46040A24A4E70500ABD5C7 /* RxAlamofire+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxAlamofire+Ext.swift"; sourceTree = "<group>"; };
+		FC46040C24A4EC5B00ABD5C7 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		FC489AF2249E05C500E4245C /* OpenWeatherNAB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWeatherNAB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC489AF5249E05C500E4245C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC489AF7249E05C500E4245C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		FC489B0B249E05C600E4245C /* OpenWeatherNABTests */ = {
 			isa = PBXGroup;
 			children = (
+				FC46040C24A4EC5B00ABD5C7 /* CacheTests.swift */,
 				FC128F7D24A0B5D500B0CEF7 /* UpcomingWeekForecastTests.swift */,
 				FCD1617E24A2B70D00357D63 /* ForecastItemModelTests.swift */,
 				FC489B0E249E05C600E4245C /* Info.plist */,
@@ -564,6 +567,7 @@
 			files = (
 				FC128F7E24A0B5D500B0CEF7 /* UpcomingWeekForecastTests.swift in Sources */,
 				FCD1617F24A2B70D00357D63 /* ForecastItemModelTests.swift in Sources */,
+				FC46040D24A4EC5B00ABD5C7 /* CacheTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

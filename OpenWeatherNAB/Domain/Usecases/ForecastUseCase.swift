@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol ForecastUseCase {
-    func getUpcomingWeekForecast(for location: String) -> Observable<[Forescast]>
+    func getUpcomingWeekForecast(for location: String) -> Observable<[Forecast]>
 }

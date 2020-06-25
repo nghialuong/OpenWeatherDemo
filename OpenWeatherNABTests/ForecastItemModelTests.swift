@@ -14,7 +14,7 @@ class ForecastItemModelTests: XCTestCase {
     var itemModel: ForecastItemModel!
     
     override func setUp() {
-        let forecast = Forescast(date: 1592971200, avgTempature: 26, pressure: 1009, humidity: 67, description: "light rain")
+        let forecast = Forecast(date: 1592971200, avgTempature: 26, pressure: 1009, humidity: 67, description: "light rain")
         itemModel = ForecastItemModel(forecast: forecast)
     }
     

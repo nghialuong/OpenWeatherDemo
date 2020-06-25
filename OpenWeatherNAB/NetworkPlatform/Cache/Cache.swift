@@ -12,10 +12,6 @@ import RxSwift
 final class Cache<Key: Hashable, Value> {
     private let wrapped = NSCache<WrappedKey, Entry>()
     
-    init(maximumEntryCount: Int = 50) {
-        wrapped.countLimit = maximumEntryCount
-    }
-
     func insert(_ value: Value, forKey key: Key, lifeTime: TimeInterval) {
         let now = Date()
         let expiredDate = now.addingTimeInterval(lifeTime)
@@ -57,6 +53,7 @@ extension Cache {
             
             return value.key == key
         }
+        
     }
 }
 

@@ -12,14 +12,14 @@ import RxSwift
 final class ForecastNetwork: ForecastUseCase {
     private let path = "forecast"
     private let network: Network
-    private let cache: Cache<String, [Forescast]>
+    private let cache: Cache<String, [Forecast]>
     
     init(network: Network) {
         self.network = network
-        self.cache = Cache<String, [Forescast]>()
+        self.cache = Cache<String, [Forecast]>()
     }
     
-    func getUpcomingWeekForecast(for location: String) -> Observable<[Forescast]> {
+    func getUpcomingWeekForecast(for location: String) -> Observable<[Forecast]> {
         if let forecastItems = cache.value(forKey: location.lowercased()) {
             return Observable.just(forecastItems)
         }

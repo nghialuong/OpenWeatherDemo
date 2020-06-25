@@ -22,14 +22,14 @@ final class Network {
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
     
-    func getUpcomingWeekForecast(for location: String, path: String) -> Observable<[Forescast]> {
+    func getUpcomingWeekForecast(for location: String, path: String) -> Observable<[Forecast]> {
         let absolutePath = "\(endPoint)/data/\(apiVersion)/\(path)/daily?q=\(location.lowercased())&cnt=7&appid=\(apiID)&units=metric"
         return RxAlamofire
             .requestData(.get, absolutePath)
             .debug()
             .observeOn(scheduler)
             .expectingObject(ofType: WeekForecastData.self)
-            .map { $0.list.map { Forescast(date: $0.dt, avgTempature: $0.temp.day,
+            .map { $0.list.map { Forecast(date: $0.dt, avgTempature: $0.temp.day,
                                            pressure: $0.pressure,
                                            humidity: $0.humidity,
                                            description: $0.weather[0].weatherDescription) }

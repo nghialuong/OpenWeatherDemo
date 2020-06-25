@@ -15,7 +15,7 @@ struct ForecastItemModel {
     let humidity: Int
     let description: String
     
-    init(forecast: Forescast) {
+    init(forecast: Forecast) {
         self.date = forecast.date
         self.temparture = forecast.avgTempature
         self.pressure = forecast.pressure
