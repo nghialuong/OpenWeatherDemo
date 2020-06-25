@@ -42,3 +42,5 @@ d/ Status of checklist:
     9. Not Needed
     10. Done
 ```
+
+e/ Test Coverage: 75% (run test first, before running project, cus the Cache may lead the app not call API)

@@ -28,24 +28,11 @@ final class Network {
             .requestData(.get, absolutePath)
             .debug()
             .observeOn(scheduler)
-            .map { response, data in
-                if 200 ..< 300 ~= response.statusCode {
-                    do {
-                        let forecastData = try JSONDecoder().decode(WeekForecastData.self, from: data)
-                        return forecastData.list.map { Forescast(date: $0.dt, avgTempature: $0.temp.day,
-                                                                 pressure: $0.pressure,
-                                                                 humidity: $0.humidity,
-                                                                 description: $0.weather[0].weatherDescription) }
-                    } catch  {
-                        throw ApiError.other
-                    }
-                } else if response.statusCode == 401 {
-                    throw ApiError.invalidKey
-                } else if 400 ..< 500 ~= response.statusCode {
-                    throw ApiError.cityNotFound
-                } else {
-                    throw ApiError.serverFailure
-                }
+            .expectingObject(ofType: WeekForecastData.self)
+            .map { $0.list.map { Forescast(date: $0.dt, avgTempature: $0.temp.day,
+                                           pressure: $0.pressure,
+                                           humidity: $0.humidity,
+                                           description: $0.weather[0].weatherDescription) }
         }
     }
 }
