@@ -9,17 +9,32 @@
 import UIKit
 
 class UpcomingWeekForecastTableViewCell: UITableViewCell {
-    @IBOutlet weak var dateValueLabel: UILabel!
-    @IBOutlet weak var tempatureValueLabel: UILabel!
-    @IBOutlet weak var pressureValueLabel: UILabel!
-    @IBOutlet weak var humidityValueLabel: UILabel!
-    @IBOutlet weak var descriptionValueLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var tempatureLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    override func awakeFromNib() {
+        addSupportAutoAjustment(dateLabel)
+        addSupportAutoAjustment(tempatureLabel)
+        addSupportAutoAjustment(pressureLabel)
+        addSupportAutoAjustment(humidityLabel)
+        addSupportAutoAjustment(descriptionLabel)
+    }   
     
     func bind(_ viewModel: ForecastItemModel) {
-        self.dateValueLabel.text = viewModel.dateToString()
-        self.tempatureValueLabel.text = viewModel.tempartureToString()
-        self.pressureValueLabel.text = viewModel.pressureToString()
-        self.humidityValueLabel.text = viewModel.humitidyToString()
-        self.descriptionValueLabel.text = viewModel.description
+        self.dateLabel.text = viewModel.dateToString()
+        self.tempatureLabel.text = viewModel.tempartureToString()
+        self.pressureLabel.text = viewModel.pressureToString()
+        self.humidityLabel.text = viewModel.humitidyToString()
+        self.descriptionLabel.text = viewModel.descriptionToString()
+    }
+}
+
+extension UpcomingWeekForecastTableViewCell {
+    private func addSupportAutoAjustment(_ label: UILabel) {
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.adjustsFontForContentSizeCategory = true
     }
 }

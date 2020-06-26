@@ -30,19 +30,23 @@ extension ForecastItemModel {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = "E, d MMM yyyy"
-        return dateFormatter.string(from: date)
+        return "Date: \(dateFormatter.string(from: date))"
     }
     
     func tempartureToString() -> String {
-        return "\(Int(temparture))°C"
+        return "Average Tempature: \(Int(temparture))°C"
     }
     
     func pressureToString() -> String {
-        return "\(pressure)"
+        return "Pressure: \(pressure)"
     }
     
     func humitidyToString() -> String {
-        return "\(humidity)%"
+        return "Humidity: \(humidity)%"
+    }
+    
+    func descriptionToString() -> String {
+        return "Description: \(description)"
     }
     
 }

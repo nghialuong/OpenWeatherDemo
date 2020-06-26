@@ -19,10 +19,10 @@ class ForecastItemModelTests: XCTestCase {
     }
     
     func test_forecastItemModel() {
-        XCTAssertEqual(itemModel.dateToString(), "Wed, 24 Jun 2020")
-        XCTAssertEqual(itemModel.tempartureToString(), "26°C")
-        XCTAssertEqual(itemModel.pressureToString(), "1009")
-        XCTAssertEqual(itemModel.humitidyToString(), "67%")
-        XCTAssertEqual(itemModel.description, "light rain")
+        XCTAssertEqual(itemModel.dateToString(), "Date: Wed, 24 Jun 2020")
+        XCTAssertEqual(itemModel.tempartureToString(), "Average Tempature: 26°C")
+        XCTAssertEqual(itemModel.pressureToString(), "Pressure: 1009")
+        XCTAssertEqual(itemModel.humitidyToString(), "Humidity: 67%")
+        XCTAssertEqual(itemModel.descriptionToString(), "Description: light rain")
     }
 }
