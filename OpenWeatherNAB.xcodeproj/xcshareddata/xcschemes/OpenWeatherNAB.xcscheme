@@ -49,6 +49,16 @@
                ReferencedContainer = "container:OpenWeatherNAB.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FC62CEF724A7E14D00A2E9CF"
+               BuildableName = "OpenWeatherNABUITests.xctest"
+               BlueprintName = "OpenWeatherNABUITests"
+               ReferencedContainer = "container:OpenWeatherNAB.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

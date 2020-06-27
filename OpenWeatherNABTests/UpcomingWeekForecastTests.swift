@@ -20,6 +20,7 @@ class UpcomingWeekForecastTests: XCTestCase {
     var disposeBag: DisposeBag!
     
     override func setUp() {
+        super.setUp()
         let networkUseCase = NetworkUseCaseProvider()
         viewModel = UpcomingWeekForecastViewModel(useCase: networkUseCase.makeForecastUseCase())
         scheduler = TestScheduler(initialClock: 0)

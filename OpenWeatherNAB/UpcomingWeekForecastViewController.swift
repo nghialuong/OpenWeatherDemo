@@ -62,6 +62,7 @@ class UpcomingWeekForecastViewController: UIViewController {
         let searchTrigger = searchTextChanged
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
+            .map { $0.replacingOccurrences(of: " ", with: "") }
             .filter { $0.count > 2 }
             .asDriverOnErrorJustComplete()
         let clearSearchTrigger = searchTextChanged

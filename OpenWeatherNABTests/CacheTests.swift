@@ -14,6 +14,7 @@ class CacheTests: XCTestCase {
     var cache: Cache<String, [Forecast]>!
     
     override func setUp() {
+        super.setUp()
         cache = Cache<String, [Forecast]>()
     }
     

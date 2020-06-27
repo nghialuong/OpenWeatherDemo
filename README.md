@@ -38,9 +38,11 @@ d/ Status of checklist:
     5. Not Done
     6. Done
     7. Done
-    8. Not Done
+    8. 
+        a. Done
+        b. Done
     9. Not Needed
     10. Done
 ```
 
-e/ Test Coverage: 78% (run test first, before running project, cus the Cache may lead the app not call API)
+e/ Test Coverage: 78% (run test first, before running project, because the Cache may lead the app not call API)
