@@ -1,0 +1,22 @@
+//
+//  UseCaseProvider.swift
+//  OpenWeatherNAB
+//
+//  Created by Luong Nghia on 6/20/20.
+//  Copyright © 2020 Luong Nghia. All rights reserved.
+//
+
+import Foundation
+
+final class NetworkUseCaseProvider {
+    private let networkProvider: NetworkProvider
+
+       public init() {
+           networkProvider = NetworkProvider()
+       }
+
+//       public func makePostsUseCase() -> Domain.PostsUseCase {
+//           return PostsUseCase(network: networkProvider.makePostsNetwork(),
+//                                  cache: Cache<Post>(path: "allPosts"))
+//       }
+}

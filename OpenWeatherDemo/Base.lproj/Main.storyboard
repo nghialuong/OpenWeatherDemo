@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Upcoming Week Forecast View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="UpcomingWeekForecastViewController" id="BYZ-38-t0r" customClass="UpcomingWeekForecastViewController" customModule="OpenWeatherNAB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bkb-B7-R9N">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UpcomingWeekForecastCell" rowHeight="160" id="Y9e-zb-i8M" customClass="UpcomingWeekForecastTableViewCell" customModule="OpenWeatherNAB" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y9e-zb-i8M" id="qXJ-eb-dJi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity: 49%" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTC-sm-pRo">
+                                                    <rect key="frame" x="20" y="96.5" width="374" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressure: 2020" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJh-4V-ZD9">
+                                                    <rect key="frame" x="20" y="68" width="374" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Tempature: 25 * C" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bv-P3-bKi">
+                                                    <rect key="frame" x="20" y="39.5" width="374" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: Mon, 04 May, 2020" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8T-CF-6fY">
+                                                    <rect key="frame" x="20" y="11" width="374" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description: Sky is clear" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcQ-ux-wdl">
+                                                    <rect key="frame" x="20" y="126" width="374" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LcQ-ux-wdl" firstAttribute="leading" secondItem="qXJ-eb-dJi" secondAttribute="leading" constant="20" id="1od-P4-pCR"/>
+                                                <constraint firstItem="KTC-sm-pRo" firstAttribute="leading" secondItem="qXJ-eb-dJi" secondAttribute="leading" constant="20" id="8pW-md-lrC"/>
+                                                <constraint firstAttribute="trailing" secondItem="KTC-sm-pRo" secondAttribute="trailing" constant="20" id="FhX-Kn-ecv"/>
+                                                <constraint firstAttribute="bottom" secondItem="LcQ-ux-wdl" secondAttribute="bottom" constant="13.5" id="G3b-74-Ec9"/>
+                                                <constraint firstItem="LcQ-ux-wdl" firstAttribute="top" secondItem="KTC-sm-pRo" secondAttribute="bottom" constant="9" id="Gt1-a2-CaO"/>
+                                                <constraint firstItem="mJh-4V-ZD9" firstAttribute="top" secondItem="8Bv-P3-bKi" secondAttribute="bottom" constant="8" id="M9D-Vo-Osb"/>
+                                                <constraint firstAttribute="trailing" secondItem="d8T-CF-6fY" secondAttribute="trailing" constant="20" id="MGu-9C-C1e"/>
+                                                <constraint firstItem="mJh-4V-ZD9" firstAttribute="top" secondItem="8Bv-P3-bKi" secondAttribute="bottom" constant="8" id="MsA-S2-Myl"/>
+                                                <constraint firstItem="d8T-CF-6fY" firstAttribute="top" secondItem="qXJ-eb-dJi" secondAttribute="top" constant="11" id="O3H-g2-T8C"/>
+                                                <constraint firstItem="KTC-sm-pRo" firstAttribute="top" secondItem="mJh-4V-ZD9" secondAttribute="bottom" constant="8" id="PI6-eY-t1E"/>
+                                                <constraint firstItem="8Bv-P3-bKi" firstAttribute="leading" secondItem="qXJ-eb-dJi" secondAttribute="leading" constant="20" id="cgg-LV-xyc"/>
+                                                <constraint firstItem="d8T-CF-6fY" firstAttribute="leading" secondItem="qXJ-eb-dJi" secondAttribute="leading" constant="20" id="dXF-QX-eAM"/>
+                                                <constraint firstItem="mJh-4V-ZD9" firstAttribute="leading" secondItem="qXJ-eb-dJi" secondAttribute="leading" constant="20" id="dlq-oI-Uzm"/>
+                                                <constraint firstAttribute="trailing" secondItem="mJh-4V-ZD9" secondAttribute="trailing" constant="20" id="kgt-hr-8SY"/>
+                                                <constraint firstAttribute="trailing" secondItem="LcQ-ux-wdl" secondAttribute="trailing" constant="20" id="n9K-F7-fk7"/>
+                                                <constraint firstItem="8Bv-P3-bKi" firstAttribute="top" secondItem="d8T-CF-6fY" secondAttribute="bottom" constant="8" id="o7q-Ij-AqE"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Bv-P3-bKi" secondAttribute="trailing" constant="20" id="x9Z-Lv-ESK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="d8T-CF-6fY" id="atA-id-PxT"/>
+                                            <outlet property="descriptionLabel" destination="LcQ-ux-wdl" id="UXJ-qm-up3"/>
+                                            <outlet property="humidityLabel" destination="KTC-sm-pRo" id="xQL-EW-bXv"/>
+                                            <outlet property="pressureLabel" destination="mJh-4V-ZD9" id="4mC-wG-xzo"/>
+                                            <outlet property="tempatureLabel" destination="8Bv-P3-bKi" id="1cb-Rw-dm0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Bkb-B7-R9N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9yJ-54-rhn"/>
+                            <constraint firstItem="Bkb-B7-R9N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LjE-Bt-ocT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bkb-B7-R9N" secondAttribute="bottom" id="ZJn-hE-Woo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bkb-B7-R9N" secondAttribute="trailing" id="gvT-bI-dTS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Bkb-B7-R9N" id="K2m-4Z-iHI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
